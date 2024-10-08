@@ -1,0 +1,6 @@
+^\.mk\.code-workspace$
+^LICENSE\.md$
+^reference\.qmd$
+^\.gitignore$
+^README\.Rmd$
+^drafts/

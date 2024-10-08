@@ -1,0 +1,22 @@
+Package: mk
+Title: Michael Knitz Personal R Package
+Version: 0.0.0.9000
+Authors@R: 
+    person("Michael", "Knitz", , "mikeknitz@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Personal R Package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    codetools,
+    scales,
+    stringr,
+    dplyr,
+    forcats
+Suggests:
+    AnnotationDbi,
+    org.Hs.eg.db,
+    org.Mm.eg.db,
+    Seurat
