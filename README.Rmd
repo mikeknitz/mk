@@ -40,7 +40,7 @@ Add lines to the top of a reproducible script to load (and not attach) the names
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "v0.0.0.9007")
+stopifnot(packageVersion("mk") == "0.0.0.9007")
 ```
 
 Since I am adding lots of various helper functions with no common theme, best to avoid loading via `library()` and just explicitly use e.g., `mk::function_name()` when calling a function. Makes it easy to see in a script where these custom functions are being used.

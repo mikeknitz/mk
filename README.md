@@ -30,7 +30,7 @@ the namespace and check if the version number is as expected.
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "v0.0.0.9007")
+stopifnot(packageVersion("mk") == "0.0.0.9007")
 ```
 
 Since I am adding lots of various helper functions with no common theme,
