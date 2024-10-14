@@ -1,0 +1,33 @@
+Package: mk
+Title: Michael Knitz Personal R Package
+Version: 0.0.0.9006
+Authors@R: 
+    person("Michael", "Knitz", , "mikeknitz@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Personal R Package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    codetools,
+    dplyr,
+    forcats,
+    ggh4x,
+    ggplot2,
+    grDevices,
+    grid,
+    openxlsx,
+    scales,
+    stringr,
+    utils
+Suggests:
+    Cairo,
+    RColorBrewer,
+    Seurat,
+    viridis,
+    AnnotationDbi,
+    org.Hs.eg.db,
+    org.Mm.eg.db,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
