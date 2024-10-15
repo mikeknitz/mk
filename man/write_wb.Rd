@@ -52,7 +52,7 @@ write_wb(
 \item{cols.fac.color}{default NULL for no coloring, or one of:
 \itemize{
 \item character or numeric vector = provide colnames/indices for character columns
-\item list where list names = column names and list items = \if{html}{\out{<chr>}} hex codes / colors for each column specified, list items may or may not be named characters
+\item list where list names = column names and list items = \if{html}{\out{<chr>}} hex codes / colors for levels in the column, list items may or may not be named characters where names() refer to the levels
 }}
 
 \item{lighten}{lighten the provided colors to argument "cols.fac.color" by a factor where 1 = original color and 0 = white, default = 0.35, NULL for no lightening}

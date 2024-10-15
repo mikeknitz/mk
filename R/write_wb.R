@@ -46,7 +46,7 @@
 #' 
 #' - character or numeric vector = provide colnames/indices for character columns
 #' 
-#' - list where list names = column names and list items = <chr> hex codes / colors for each column specified, list items may or may not be named characters
+#' - list where list names = column names and list items = <chr> hex codes / colors for levels in the column, list items may or may not be named characters where names() refer to the levels
 #' @param lighten lighten the provided colors to argument "cols.fac.color" by a factor where 1 = original color and 0 = white, default = 0.35, NULL for no lightening
 #' @param row.names default = FALSE, row.names are not supported and this argument must be FALSE
 #' @param silent whether to silence messages from this wrapper function (default FALSE)
@@ -90,13 +90,12 @@ write_wb <- function(
 
   # coloring based on factor levels
     # <chr> or <numeric> input
-      # provide colnames/indices corresponding to character columns in dataframe
-      # uses lightened default ggplot colors, custom colors not implemented yet
+      # provide colnames/indices corresponding to character columns
+      # in dataframe, uses lightened default ggplot colors
     # <list> input
       # list names = column names
-      # list items = <chr> hex codes for columns of each name,
-        # or a named character vector where names() refer to df column names
-      # list items = hex codes for columns of each name
+      # list items = <chr> hex codes for the levels of the particular column,
+        # or a named character vector where the names() map to the levels
   cols.fac.color = NULL,
   
   # If using cols.fac.color, apply lighten_colors(factor = 0.35)
@@ -391,8 +390,14 @@ write_wb <- function(
 
       base::Map(named.cols.fac.color, names(named.cols.fac.color), f = \(cat.colors, col.oi) {
         if (!is.null(lighten)) {
+          names.before.lighten <- names(cat.colors)
           cat.colors <- lighten_colors(colors = cat.colors, factor = lighten)
+          names(cat.colors) <- names.before.lighten          
         }
+        
+        # wb does not exist in this scope,
+        # so this function in the loop modifies
+        # the wb in first parent scope it finds
         for (i in seq_along(cat.colors)) {
           openxlsx::conditionalFormatting(
             wb = wb,

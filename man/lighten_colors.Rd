@@ -24,6 +24,9 @@ a character vector of hex codes
 \description{
 Lighten or darken a color palette with mk::lighten_colors() or mk::darken_colors(). Inspired by / adapted from https://gist.github.com/Jfortin1/72ef064469d1703c6b30, 2024-10-13
 }
+\details{
+NOTE: this function will remove names() from a named vector, will be fixed in later version
+}
 \examples{
 mk::lighten_colors(c("red", "green", "blue"), 0.65)
 mk::darken_colors(mk::gg_colors(8), 0.75)
