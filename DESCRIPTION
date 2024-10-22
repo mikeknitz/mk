@@ -1,6 +1,6 @@
 Package: mk
 Title: Michael Knitz Personal R Package
-Version: 0.0.0.9008
+Version: 0.0.0.9009
 Authors@R: 
     person("Michael", "Knitz", , "mikeknitz@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
@@ -23,6 +23,8 @@ Imports:
     openxlsx,
     scales,
     stringr,
+    tibble,
+    tidyr,
     utils
 Suggests:
     Cairo,
@@ -32,5 +34,6 @@ Suggests:
     AnnotationDbi,
     org.Hs.eg.db,
     org.Mm.eg.db,
+    SummarizedExperiment,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

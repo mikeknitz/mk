@@ -23,7 +23,14 @@
 lighten_colors <- function(colors, factor) {
   # factor = 1 = original color
   # factor = 0 = white
-  sapply(
+
+  if (!is.null(names(colors))) {
+    stored.names <- names(colors)
+  } else {
+    stored.names <- NULL 
+  }
+
+  res <- sapply(
     X = colors,
     factor = factor,
     FUN = \(colors, factor) {
@@ -37,6 +44,13 @@ lighten_colors <- function(colors, factor) {
       )
     }
   ) |> base::unname()
+
+  if (!is.null(stored.names)) {
+    names(res) <- stored.names
+  }
+
+  return(res)
+
 }
 
 #' @rdname lighten_colors
@@ -45,7 +59,14 @@ lighten_colors <- function(colors, factor) {
 darken_colors <- function(colors, factor) {
   # factor = 1 = original color
   # factor = 0 = black
-  sapply(
+
+  if (!is.null(names(colors))) {
+    stored.names <- names(colors)
+  } else {
+    stored.names <- NULL 
+  }
+
+  res <- sapply(
     X = colors,
     factor = factor,
     FUN = \(colors, factor) {
@@ -59,4 +80,11 @@ darken_colors <- function(colors, factor) {
       )
     }
   ) |> base::unname()
+  
+  if (!is.null(stored.names)) {
+    names(res) <- stored.names
+  }
+
+  return(res)
+  
 }

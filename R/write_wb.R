@@ -157,7 +157,9 @@ write_wb <- function(
 
   if (is.null(sheet))
     if (length(prev.sheet.names) == 0) {
-      message("Writing to new sheet \"Sheet1\"")
+      if (!silent) {
+        message("Writing to new sheet \"Sheet1\"")
+      }
       active.sheet <- "Sheet1"
     } else {
       active.sheet <- base::setdiff(
@@ -165,11 +167,15 @@ write_wb <- function(
         prev.sheet.names
       )[1]
       if (length(active.sheet) == 0) stop(edge.case.mess)
-      message(paste0("Writing to new sheet \"", active.sheet, "\""))
+      if (!silent) {
+        message(paste0("Writing to new sheet \"", active.sheet, "\""))
+      }
   } else if (is.character(sheet)) {
     if (length(sheet) != 1) stop(sheet.err.mess)
     if (sheet %in% prev.sheet.names) {
-      message(paste0("sheet \"", sheet, "\" already exists, overwriting..."))
+      if (!silent) {
+        message(paste0("sheet \"", sheet, "\" already exists, overwriting..."))
+      }
       sheet.exists <- TRUE
     } else {
       active.sheet <- sheet
@@ -177,10 +183,12 @@ write_wb <- function(
   } else if (is.numeric(sheet)) {
     if (length(sheet) != 1) stop(sheet.err.mess)
     if (sheet %in% seq_along(prev.sheet.names)) {
-      message(paste0(
-        "sheet at index ", sheet, " named \"",
-        prev.sheet.names[sheet], "\" already exists, overwriting..."
-      ))
+      if (!silent) {
+        message(paste0(
+          "sheet at index ", sheet, " named \"",
+          prev.sheet.names[sheet], "\" already exists, overwriting..."
+        ))
+      }
      active.sheet <- prev.sheet.names[sheet]
      sheet.exists <- TRUE
     } else {
@@ -189,7 +197,9 @@ write_wb <- function(
         prev.sheet.names
       )[1]
       if (length(active.sheet) == 0) stop(edge.case.mess)
-      message(paste0("Writing to new sheet \"", active.sheet, "\""))
+      if (!silent) {
+        message(paste0("Writing to new sheet \"", active.sheet, "\""))
+      }
     }
   }
 
@@ -533,9 +543,10 @@ write_wb <- function(
 
   # ----------------------------------------------------------------------------
 
-  message("Done.")
-
-  message("To save to .xlsx, use mk::save_wb()")
+  if (!silent) {
+    message("Done.")
+    message("To save to .xlsx, use mk::save_wb()")
+  }
 
   # Return the workbook object
   wb
