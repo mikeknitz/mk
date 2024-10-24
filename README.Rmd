@@ -31,7 +31,7 @@ if (!requireNamespace("devtools", quietly = TRUE)) {
 Install a specific version from [Releases](https://github.com/mikeknitz/mk/releases)
 
 ``` r
-devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9009")
+devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9010")
 ```
 
 ## Recommended usage
@@ -40,7 +40,7 @@ Add lines to the top of a reproducible script to load (and not attach) the names
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "0.0.0.9009")
+stopifnot(packageVersion("mk") == "0.0.0.9010")
 ```
 
 Since I am adding lots of various helper functions with no common theme, best to avoid loading via `library()` and just explicitly use e.g., `mk::function_name()` when calling a function. Makes it easy to see in a script where these custom functions are being used.

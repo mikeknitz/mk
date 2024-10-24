@@ -76,10 +76,10 @@ se_long_data <- function(
   }
   
   if (strict) {
-    if (values.to %in% colnames(rowData(se))) {
+    if (values.to %in% colnames(SummarizedExperiment::rowData(se))) {
       stop("STRICT: \"values.to\" cannot be already present in colnames(rowData(se))")
     }
-    if (values.to %in% colnames(colData(se))) {
+    if (values.to %in% colnames(SummarizedExperiment::colData(se))) {
       stop("STRICT: \"values.to\" cannot be already present in colnames(colData(se))")
     }
     if ("se_colnames" %in% colnames(SummarizedExperiment::colData(se))) {
@@ -133,9 +133,5 @@ se_long_data <- function(
     as.data.frame()
   
   return(df)
-
-  # avoid R CMD CHECK "no visible binding" messages
-  rowData <- NULL; colData <- NULL
-
   
 }
