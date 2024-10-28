@@ -1,6 +1,6 @@
 Package: mk
 Title: Michael Knitz Personal R Package
-Version: 0.0.0.9010
+Version: 0.0.0.9011
 Authors@R: 
     person("Michael", "Knitz", , "mikeknitz@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))

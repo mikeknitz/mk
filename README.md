@@ -20,7 +20,7 @@ Install a specific version from
 [Releases](https://github.com/mikeknitz/mk/releases)
 
 ``` r
-devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9010")
+devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9011")
 ```
 
 ## Recommended usage
@@ -30,7 +30,7 @@ the namespace and check if the version number is as expected.
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "0.0.0.9010")
+stopifnot(packageVersion("mk") == "0.0.0.9011")
 ```
 
 Since I am adding lots of various helper functions with no common theme,
