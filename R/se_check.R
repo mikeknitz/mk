@@ -117,13 +117,13 @@ se_check <- function(se, silent = FALSE, strict = FALSE) {
     )
     if (!cond) {
       message(paste0(
-        "  ERROR: row.names(rowData(se)) not identical to as.character(rowData(se)[[1]])"
+        "  ERROR: row.names(colData(se)) not identical to as.character(colData(se)[[1]])"
       ))
       return_false <- TRUE
     } else {
       if (!silent) {
         message(paste0(
-          "  row.names(rowData(se)) identical to as.character(rowData(se)[[1]])"
+          "  row.names(colData(se)) identical to as.character(colData(se)[[1]])"
         ))
       }
     }

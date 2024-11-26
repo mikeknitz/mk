@@ -20,7 +20,7 @@ Install a specific version from
 [Releases](https://github.com/mikeknitz/mk/releases)
 
 ``` r
-devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9011")
+devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9012")
 ```
 
 ## Recommended usage
@@ -30,7 +30,7 @@ the namespace and check if the version number is as expected.
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "0.0.0.9011")
+stopifnot(packageVersion("mk") == "0.0.0.9012")
 ```
 
 Since I am adding lots of various helper functions with no common theme,
@@ -60,7 +60,6 @@ install.packages("Seurat")
 install.packages("Cairo")
 
 # For some of the suggested examples in `mk::plot_colors()` 
-install.packages("RColorBrewer")
 install.packages("viridis")
 ```
 
@@ -76,6 +75,7 @@ install.packages(ggplot2)
 install.packages(htmltools)
 install.packages(htmlwidgets)
 install.packages(openxlsx)
+install.packages(RColorBrewer)
 install.packages(scales)
 install.packages(stringr)
 install.packages(tibble)
