@@ -1,4 +1,4 @@
-# Updated 2024-11-26
+# Updated 2024-11-27
 # Depends on mk::thm()
 # Depends on mk::thm_bg()
 
@@ -25,6 +25,7 @@
 #' @param fill.preset default NULL, or ignore the fill arguments above and use some preset values, one of: c("0.05", "0.15", "0.25")
 #' @param colors, default NULL to use a red color scheme for `type = "gradient"`, or a vector of colors
 #' @param fill.title default NA for default title, or use NULL or a custom title for the fill legend
+#' @param base.size pass argument to mk::thm() to change default sizes of text elements in plot, default NULL to take the default value in mk::thm()
 #' @param format TRUE (default) = consider the formatting arguments below in order, FALSE = turn all off
 #' @param .gsub.hallmark TRUE (default) = Remove pattern ^HALLMARK_ from Description column
 #' @param .gsub.underscore TRUE (default) = Replace pattern "_" with " " from Description column
@@ -74,6 +75,9 @@ waterfall_plot <- function(
   # NA = default title for fill legend title
   # NULL = none, or a custom title
   fill.title = NA,
+
+  # Pass argument to mk::thm(),
+  base.size = NULL,
 
   # format = TRUE (default) --> use TRUE/FALSE options below
   # format = FALSE --> consider all format options below = FALSE
@@ -194,9 +198,16 @@ waterfall_plot <- function(
   # ----------------------------------------------------------------------------
   
   p <- p +
-    ggplot2::coord_flip() +
-    thm() +
-    ggplot2::theme(
+    ggplot2::coord_flip()
+
+  # base.size argument for adding mk::thm()
+  if (!is.null(base.size)) {
+    p <- p + thm(base.size = base.size)
+  } else {
+    p <- p + thm()
+  }
+      
+  p <- p + ggplot2::theme(
       panel.grid = ggplot2::element_line(color = "lightgrey"),
       legend.title = ggplot2::element_text(margin = ggplot2::margin(b = 15))
     ) +
