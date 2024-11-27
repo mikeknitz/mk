@@ -183,6 +183,9 @@ enrich_curve <- function(
 
   # ----------------------------------------------------------------------------
 
-  p
+  return(p)
+  
+  # avoid R CMD CHECK "no visible binding" messages
+  ID <- NULL
 
 }

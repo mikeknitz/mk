@@ -3,6 +3,7 @@
 export(check_globals)
 export(darken_colors)
 export(dt)
+export(enrich_curve)
 export(gene_symbol_to_name)
 export(gg_colors)
 export(label_sci)

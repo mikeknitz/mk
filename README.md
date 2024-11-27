@@ -20,7 +20,7 @@ Install a specific version from
 [Releases](https://github.com/mikeknitz/mk/releases)
 
 ``` r
-devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9012")
+devtools::install_github("mikeknitz/mk", ref = "v0.0.0.9013")
 ```
 
 ## Recommended usage
@@ -30,7 +30,7 @@ the namespace and check if the version number is as expected.
 
 ``` r
 loadNamespace("mk")
-stopifnot(packageVersion("mk") == "0.0.0.9012")
+stopifnot(packageVersion("mk") == "0.0.0.9013")
 ```
 
 Since I am adding lots of various helper functions with no common theme,
@@ -51,10 +51,14 @@ BiocManager::install("org.Mm.eg.db")
 # To make use of SummarizedExperiment related functions
 BiocManager::install("SummarizedExperiment")
 
+# For mk::enrich_curve()
+BiocManager::install("clusterProfiler")
+BiocManager::install("enrichplot")
+
 # To make use of Seurat related functions
 install.packages("Seurat")
 
-# For the Cairo::Cairo() device in `mk::saveplot()`, but function
+# For the Cairo::Cairo() device in `mk::save_plot()`, but function
 # will work fine otherwise using devices from `grDevices` that
 # comes pre-installed with R
 install.packages("Cairo")

@@ -19,6 +19,7 @@ waterfall_plot(
   fill.preset = NULL,
   colors = NULL,
   fill.title = NA,
+  base.size = NULL,
   format = TRUE,
   .gsub.hallmark = TRUE,
   .gsub.underscore = TRUE
@@ -42,6 +43,8 @@ waterfall_plot(
 \item{colors, }{default NULL to use a red color scheme for \code{type = "gradient"}, or a vector of colors}
 
 \item{fill.title}{default NA for default title, or use NULL or a custom title for the fill legend}
+
+\item{base.size}{pass argument to mk::thm() to change default sizes of text elements in plot, default NULL to take the default value in mk::thm()}
 
 \item{format}{TRUE (default) = consider the formatting arguments below in order, FALSE = turn all off}
 
